@@ -21,7 +21,7 @@ const Banner = () => {
             <span className="uppercase text-secondary">Carpentry tools</span>.
           </p>
 
-          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-secondary text-white">Explore More</button>
         </div>
       </div>
     </div>
