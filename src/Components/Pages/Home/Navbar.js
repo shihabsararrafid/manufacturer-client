@@ -56,7 +56,9 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <a className=" uppercase ml-10 text-xl">daisyUI</a>
+        <a className=" uppercase font-bold text-2xl  lg:ml-10 text-xl">
+          Tool<span className="text-white">Ex</span>
+        </a>
       </div>
       <div className="navbar-end">
         <div className=" hidden lg:flex">
@@ -96,7 +98,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="">
-          <a className="btn btn-secondary px-5 text-white ">LOG IN</a>
+          <Link
+            className="btn btn-secondary px-8 py-2 text-white text-xl"
+            to="/login"
+          >
+            Log In
+          </Link>
         </div>
       </div>
     </div>

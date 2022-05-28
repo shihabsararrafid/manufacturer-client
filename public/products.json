@@ -1,0 +1,67 @@
+[
+    {   "name":"Clamps",
+        "quantity":"1000000",
+        "minOrder":"1000",
+        "price":"920",
+        "img":"https://i.ibb.co/gwn0KPX/clamps.jpg"
+    },
+    {  
+        "name":"Chisel",
+        "quantity":"90000",
+        "minOrder":"800",
+        "price":"720",
+        "img":"https://i.ibb.co/t2kg1JF/chisel.jpg"
+    },
+    {
+        "name":"Grinder",
+        "quantity":"1000560",
+        "minOrder":"1000",
+        "price":"620",
+        "img":"https://i.ibb.co/khNQKfN/grinder.jpg"
+    },
+    {
+        "name":"Circular Saw",
+        "quantity":"900000",
+        "minOrder":"900",
+        "price":"700",
+        "img":"https://i.ibb.co/5c8xT9N/circular-saw.jpg"
+    }
+    ,
+    {
+        "name":"Lathe",
+        "quantity":"500000", 
+        "minOrder":"1000",
+        "price":"900",
+        "img":"https://i.ibb.co/9V4Dx5K/lathe.jpg"
+    }
+    ,
+    {
+        "name":"Mallet",
+        "quantity":"800000",
+        "minOrder":"1000",
+        "price":"520",
+        "img":"https://i.ibb.co/mNrJ1Bw/mallet.jpg"
+    },
+    {
+        "name":"BackSaw",
+        "quantity":"890000",
+        "minOrder":"890",
+        "price":"620",
+        "img":"https://i.ibb.co/vZ5LkBF/backsaw.jpg"
+    },
+    {
+        "name":"Hand Saw",
+        "quantity":"18900000",
+        "minOrder":"1000",
+        "price":"650",
+        "img":"https://i.ibb.co/vkxVMDS/handshaw.jpg"
+    },
+    {
+        "name":"Power Drill",
+        "quantity":"1560000",
+        "minOrder":"1000",
+        "price":"790",
+        "img":"https://i.ibb.co/P109bkD/powerdrill.jpg"
+         
+    }
+]
