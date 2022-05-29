@@ -29,7 +29,7 @@ const SingTool = () => {
     if (quantity < minQuantity) {
       alert("Quantity cannot be less than min quantity");
     } else {
-      const url = `http://localhost:5000/purchase/${_id.id}?email=${user?.email}`;
+      const url = `http://localhost:5000/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}`;
       console.log(url);
       fetch(url, {
         method: "PUT",

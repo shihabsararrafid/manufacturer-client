@@ -1,10 +1,10 @@
 import React from "react";
 
 const Description = ({ des, len }) => {
-  const desDetail = des.split(",").slice(0, len);
+  const desDetail = des?.split(",").slice(0, len);
   return (
     <div className="ml-5 text-left">
-      {desDetail.map((detail) => (
+      {desDetail?.map((detail) => (
         <li>{detail}</li>
       ))}
     </div>
