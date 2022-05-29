@@ -3,28 +3,32 @@
         "quantity":"1000000",
         "minOrder":"1000",
         "price":"920",
-        "img":"https://i.ibb.co/gwn0KPX/clamps.jpg"
+        "img":"https://i.ibb.co/gwn0KPX/clamps.jpg",
+        "desc":"Model:10112, Size:75mm 3″,Black powder coatbar, Zinc plated thread bar, Packing: color sleeve"
     },
     {  
         "name":"Chisel",
         "quantity":"90000",
         "minOrder":"800",
         "price":"720",
-        "img":"https://i.ibb.co/t2kg1JF/chisel.jpg"
+        "img":"https://i.ibb.co/t2kg1JF/chisel.jpg",
+        "desc":"Brand: Hark Caput, Material: CrV Same a Picture ,Size: 1inch, Two-component plastic handle Sturdy, durable metal material Compact design, safe to use"
     },
     {
         "name":"Grinder",
         "quantity":"1000560",
         "minOrder":"1000",
         "price":"620",
-        "img":"https://i.ibb.co/khNQKfN/grinder.jpg"
+        "img":"https://i.ibb.co/khNQKfN/grinder.jpg",
+        "desc":"Voltage:220-240V~50/60Hz, Input power:850W No-load, speed:11000rpm ,Disc diameter:100m ,Spindle thread:M10 With 1pcs auxiliary handle ,Packed by color box"
     },
     {
         "name":"Circular Saw",
         "quantity":"900000",
         "minOrder":"900",
         "price":"700",
-        "img":"https://i.ibb.co/5c8xT9N/circular-saw.jpg"
+        "img":"https://i.ibb.co/5c8xT9N/circular-saw.jpg",
+        "desc":"Blade diameter: 185mm, No load speed: 4700r/min,Rated input power: 1050W,Rated voltage: 110/220V~ ,Frequency: 50/60Hz ,Case Qty: 4pcs/ctn,G.W/N.W: 18/16kgs,Packing size: 47.5×30.5x40cm"
     }
     ,
     {
@@ -32,7 +36,8 @@
         "quantity":"500000", 
         "minOrder":"1000",
         "price":"900",
-        "img":"https://i.ibb.co/9V4Dx5K/lathe.jpg"
+        "img":"https://i.ibb.co/9V4Dx5K/lathe.jpg",
+        "desc":"Reasonable price, Durable and practical,Speed: 20000 rpm.,Input voltage: DC12V,Current: 3A,Power: 36W.,Work table area: 120 x 100mm.,Processing materials: wood engineering plastics soft metals (aluminum, copper, etc.)."
     }
     ,
     {
@@ -40,28 +45,32 @@
         "quantity":"800000",
         "minOrder":"1000",
         "price":"520",
-        "img":"https://i.ibb.co/mNrJ1Bw/mallet.jpg"
+        "img":"https://i.ibb.co/mNrJ1Bw/mallet.jpg",
+        "desc":"trong 0.5 Pound Hammer / Haturi,Durable, Long-Lasting , Made in China,Total Length: 14 Inch, Handle Length 12 Inch, Handle Width: 3 Inch; Hammer Width: 4 Inch"
     },
     {
         "name":"BackSaw",
         "quantity":"890000",
         "minOrder":"890",
         "price":"620",
-        "img":"https://i.ibb.co/vZ5LkBF/backsaw.jpg"
+        "img":"https://i.ibb.co/vZ5LkBF/backsaw.jpg",
+        "desc":"Product: Hand Saw ,Size:400mm, 16″, 65Mn blade, heat treated ,With teeth protector ,Ergonomic plastic handle,Workers Choice,Standard, Strength Rating, Heavy Duty"
     },
     {
         "name":"Hand Saw",
         "quantity":"18900000",
         "minOrder":"1000",
         "price":"650",
-        "img":"https://i.ibb.co/vkxVMDS/handshaw.jpg"
+        "img":"https://i.ibb.co/vkxVMDS/handshaw.jpg",
+        "desc":"Product: Hand Saw ,Size:400mm, 16″, 65Mn blade, heat treated ,With teeth protector ,Ergonomic plastic handle,Workers Choice,Standard, Strength Rating, Heavy Duty"
     },
     {
         "name":"Power Drill",
         "quantity":"1560000",
         "minOrder":"1000",
         "price":"790",
-        "img":"https://i.ibb.co/P109bkD/powerdrill.jpg"
+        "img":"https://i.ibb.co/P109bkD/powerdrill.jpg",
+        "desc":"Electric Drill Machine,Power: 1500 Watts,Voltage: 230~/50Hz,Frequency-50Hz,Drill Capacity:13mm,No-load Speed: 0-3000r/min,Hardware, tools, fixtures,Product Material: PVC Body,Copper winding motor,Body Type: Insulated and shock proof, Easy grip handle & trigger"
          
     }
 ]
