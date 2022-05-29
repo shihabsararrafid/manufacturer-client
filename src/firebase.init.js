@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDERID,
-  appId: process.env.APP_ID,
+  apiKey: " AIzaSyAPYL4nliIUxdKtPAy9LFKANsBauhYHr3E",
+  authDomain: "toolex-manufacturer.firebaseapp.com",
+  projectId: "toolex-manufacturer",
+  storageBucket: "toolex-manufacturer.appspot.com",
+  messagingSenderId: "443221716951",
+  appId: "1443221716951:web:95026191f1df437d95259",
 };
 
 // Initialize Firebase
