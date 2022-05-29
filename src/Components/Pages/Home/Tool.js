@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Description";
 import Description from "./Description";
-const Tool = ({ tool, len }) => {
+const Tool = ({ tool, len, btnText }) => {
   return (
     <div className="card  bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -22,7 +23,10 @@ const Tool = ({ tool, len }) => {
           Price:${tool.price}
         </span>
         <div className="card-actions">
-          <button className="btn btn-secondary text-white">Buy Now</button>
+          <Link to={`/purchase/${tool._id}`}>
+            {" "}
+            <button className="btn btn-secondary text-white">{btnText}</button>
+          </Link>
         </div>
       </div>
     </div>
