@@ -56,7 +56,7 @@ const Register = () => {
             msg.style.display = "none";
           }, 9000);
           setTimeout(() => {
-            navigate("/login");
+            navigate("/home");
           }, 10000);
         }
       })

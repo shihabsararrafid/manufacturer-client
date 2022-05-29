@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useParams } from "react-router-dom";
+import auth from "../../../firebase.init";
 import Description from "../Home/Description";
 
 const SingTool = () => {
+  const [user, loading, error] = useAuthState(auth);
   const _id = useParams();
   console.log(_id.id);
   let des;
@@ -26,8 +29,16 @@ const SingTool = () => {
     if (quantity < minQuantity) {
       alert("Quantity cannot be less than min quantity");
     } else {
-      //   const url = `http://localhost:5000/purchase/${_id.id}?email=${user?.email}`;
-      fetch("");
+      const url = `http://localhost:5000/purchase/${_id.id}?email=${user?.email}`;
+      console.log(url);
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
     }
     console.log(quantity);
   };
