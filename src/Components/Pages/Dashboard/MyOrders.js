@@ -110,7 +110,7 @@ const MyOrders = () => {
                 <h2 class="card-title text-left  uppercase">{o.name}</h2>
                 <div className="font-semibold">
                   <p>Ordered Quantity:{o.quantity}</p>
-                  <p>Price:${o.price}</p>
+                  <p>Price Per Piece:${o.price}</p>
                   <p>
                     Amount To be Paid:${" "}
                     <span className="text-secondary font-bold">

@@ -26,12 +26,26 @@ const SingTool = () => {
     e.preventDefault();
     const quantity = parseInt(e.target.quantity.value);
     const minQuantity = parseInt(tool.minOrder);
+    const newQuan = parseInt(tool.quantity) - quantity;
+    tool.quantity = newQuan;
     if (quantity < minQuantity) {
       alert("Quantity cannot be less than min quantity");
     } else {
       const url = `http://localhost:5000/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}`;
       console.log(url);
       fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+      const anotherUrl = `http://localhost:5000/tools/?id=${_id.id}&quantity=${quantity}&available=${tool.quantity}`;
+      console.log(anotherUrl);
+      fetch(anotherUrl, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
