@@ -17,6 +17,7 @@ import MyReview from "./Components/Pages/Dashboard/MyReview";
 import Updateprofile from "./Components/Pages/Dashboard/Updateprofile";
 import RequireAuth from "./Components/Pages/Authentication/RequireAuth";
 import Users from "./Components/Pages/Dashboard/Users";
+import Blog from "./Components/Pages/Blogs/Blog";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
         <Route path="myreview" element={<MyReview></MyReview>}></Route>
         <Route path="users" element={<Users></Users>}></Route>
+        <Route path="blogs" element={<Blog></Blog>}></Route>
 
         <Route
           path="myprofile/updateprofile"

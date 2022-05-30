@@ -21,6 +21,7 @@ import UseUsers from "../../Hooks/UseUsers";
 
 const Login = () => {
   const [user2, loading1, error3] = useAuthState(auth);
+
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const [wrongmessage, setWrongmessage] = useState("");
   const [email, setEmail] = useState("");
@@ -29,6 +30,9 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   const [password, setPassword] = useState("");
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  if (loading1) {
+    return <Loading></Loading>;
+  }
   const googleSignIn = async (e) => {
     e.preventDefault();
     await signInWithGoogle();

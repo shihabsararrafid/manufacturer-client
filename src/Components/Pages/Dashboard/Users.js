@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const Users = () => {
-  const [user, loading, error] = useAuthState(auth);
-
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch("https://toolex-factory.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
+  const [user, loading, error] = useAuthState(auth);
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
   const handleAdmin = (email) => {
     fetch(
-      `http://localhost:5000/users/addadmin?email=${email}&requster=${user.email}`,
+      `https://toolex-factory.herokuapp.com/users/addadmin?email=${email}&requster=${user.email}`,
       {
         method: "PUT",
         headers: {

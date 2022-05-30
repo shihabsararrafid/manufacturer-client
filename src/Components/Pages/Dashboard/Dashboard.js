@@ -7,12 +7,15 @@ import Loading from "../Shared/Loading";
 
 const Dashboard = () => {
   const [user, loading, error] = useAuthState(auth);
-
   const [admin, adminloading] = useAdmin(user);
-  //   if (adminloading) {
-  //     return <Loading></Loading>;
-  //   }
-  console.log("current user", admin);
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  if (adminloading) {
+    return <Loading></Loading>;
+  }
+  console.log("current user", user.email, admin);
   return (
     <div>
       <div className="drawer ">

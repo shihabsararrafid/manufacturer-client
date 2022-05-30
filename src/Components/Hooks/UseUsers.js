@@ -1,5 +1,5 @@
 const UseUsers = (user) => {
-  const url = `http://localhost:5000/users?email=${user.email}`;
+  const url = `https://toolex-factory.herokuapp.com/users?email=${user.email}`;
   fetch(url, {
     method: "PUT",
     headers: {

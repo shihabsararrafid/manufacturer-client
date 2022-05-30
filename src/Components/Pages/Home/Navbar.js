@@ -62,6 +62,9 @@ const Navbar = () => {
             <Link className="text-xl font-bold uppercase " to="/purchase">
               Purchase
             </Link>
+            <Link className="text-xl font-bold uppercase " to="/blogs">
+              Blogs
+            </Link>
             {user ? (
               <Link className="text-xl font-bold uppercase " to="/dashboard">
                 Dashboard
@@ -108,6 +111,9 @@ const Navbar = () => {
             <li>
               <Link className="text-xl font-bold uppercase " to="/purchase">
                 Purchase
+              </Link>
+              <Link className="text-xl font-bold uppercase " to="/blogs">
+                Blogs
               </Link>
               {user ? (
                 <Link className="text-xl font-bold uppercase " to="/dashboard">
