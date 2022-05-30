@@ -1,9 +1,11 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import userpic from "./../../../Images/user.png";
 const MyProfile = () => {
   const [user, loading, error] = useAuthState(auth);
+
   console.log(user);
   return (
     <div>
@@ -24,15 +26,18 @@ const MyProfile = () => {
               </div>
             </div>
             <div class="card-actions m-10 ">
-              <button class="btn btn-primary">EDIT PROFILE</button>
+              <Link to="updateprofile">
+                {" "}
+                <button class="btn btn-primary">EDIT PROFILE</button>
+              </Link>
             </div>
           </figure>
           <div class="divider lg:divider-horizontal"></div>
           <div>
             <h2 className="text-primary font-mono font-bold">Full Name:</h2>
-            <p className="font-serif">{user.displayName}</p>
+            <p className="font-serif">{user?.displayName}</p>
             <p className="text-primary font-mono font-bold">Email:</p>
-            <p className="font-serif">{user.email}</p>
+            <p className="font-serif">{user?.email}</p>
           </div>
         </div>
       </div>
