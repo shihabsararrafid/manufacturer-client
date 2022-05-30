@@ -3,13 +3,13 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useAdmin from "../../Hooks/useAdmin";
+
 import UseUsers from "../../Hooks/UseUsers";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-  // if (user) {
-  //   UseUsers(user);
-  // }
+
   return (
     <div className="navbar h-[100px] bg-primary text-secondary">
       <div className="navbar-start">

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const Users = () => {
+  const [user, loading, error] = useAuthState(auth);
+
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch("https://toolex-factory.herokuapp.com/users")
@@ -8,12 +12,15 @@ const Users = () => {
       .then((data) => setUsers(data));
   }, []);
   const handleAdmin = (email) => {
-    fetch(`http://localhost:5000/users/addadmin?email=${email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
+    fetch(
+      `http://localhost:5000/users/addadmin?email=${email}&requster=${user.email}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
@@ -33,12 +40,14 @@ const Users = () => {
               <tr>
                 <td>{u.email}</td>
                 <td>
-                  <button
-                    onClick={() => handleAdmin(u.email)}
-                    className="btn btn-primary"
-                  >
-                    Make Admin
-                  </button>
+                  {u.role !== "admin" && (
+                    <button
+                      onClick={() => handleAdmin(u.email)}
+                      className="btn btn-primary"
+                    >
+                      Make Admin
+                    </button>
+                  )}
                 </td>
                 <td>
                   {" "}
