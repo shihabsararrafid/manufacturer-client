@@ -8,7 +8,7 @@ const SingReview = (props) => {
 
   return (
     <div>
-      <div class="card h-[400px] items-center card-side bg-base-100 shadow-xl ">
+      <div class="card h-[400px] lg:h-[350px] flex-col md:flex-row items-center card-side bg-base-100 shadow-xl ">
         <figure>
           <img
             className="w-[150px] mask mask-circle text-center"
