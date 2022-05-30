@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const MyOrders = () => {
@@ -64,7 +65,21 @@ const MyOrders = () => {
 
   return (
     <div>
-      <h1>Hello{orders.length}</h1>
+      <h1 className="text-3xl">
+        Hello{" "}
+        <span className="font-mono font-bold text-secondary">
+          {user.displayName}
+        </span>
+      </h1>
+
+      <h1 className="text-primary font-mono">Welcome to your Cart</h1>
+      {orders.length ? (
+        " "
+      ) : (
+        <p className="font-mono text-2xl">
+          Sorry , You Havenot added anything to your cart
+        </p>
+      )}
       <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {orders.map((o) => (
           <div>
@@ -80,9 +95,9 @@ const MyOrders = () => {
                 <h2 class="card-title text-left  uppercase">{o.name}</h2>
                 <div className="font-semibold">
                   <p>Ordered Quantity:{o.quantity}</p>
-                  <p>Price:{o.price}</p>
+                  <p>Price:${o.price}</p>
                   <p>
-                    Amount To be Paid:{" "}
+                    Amount To be Paid:${" "}
                     <span className="text-secondary font-bold">
                       {parseInt(o.price) * parseInt(o.quantity)}
                     </span>
@@ -93,6 +108,12 @@ const MyOrders = () => {
                   <button className="bg-red-600 text-white btn">
                     Delete Item
                   </button>
+                  <div>
+                    <Link to={`/purchase/${o._id}`}>
+                      {" "}
+                      <button class="btn btn-secondary">Update Order</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
