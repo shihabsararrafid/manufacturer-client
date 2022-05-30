@@ -14,7 +14,7 @@ const MyOrders = () => {
   let neworders = [];
   const [ordersnew, setOrdersnew] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/myorders?email=${user?.email}`;
+    const url = `https://toolex-factory.herokuapp.com/myorders?email=${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -65,7 +65,7 @@ const MyOrders = () => {
   const handleDelectebtn = (id) => {
     const confirm = window.confirm("Are you sure?");
     if (confirm) {
-      const url = `http://localhost:5000/myorders?id=${id}&email=${user.email}`;
+      const url = `https://toolex-factory.herokuapp.com/myorders?id=${id}&email=${user.email}`;
       fetch(url, {
         method: "DELETE",
       })

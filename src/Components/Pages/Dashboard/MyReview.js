@@ -17,7 +17,7 @@ const MyReview = () => {
   };
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/review?email=${user.email}&name=${user.displayName}&img=${user.photoURL}&start=${num}`;
+    const url = `https://toolex-factory.herokuapp.com/review?email=${user.email}&name=${user.displayName}&img=${user.photoURL}&start=${num}`;
     console.log(url);
     fetch(url, {
       method: "POST",

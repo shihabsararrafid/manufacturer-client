@@ -11,7 +11,7 @@ const SingTool = () => {
   let des;
   const [tool, setTool] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/purchase/${_id.id}`;
+    const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const SingTool = () => {
     if (quantity < minQuantity) {
       alert("Quantity cannot be less than min quantity");
     } else {
-      const url = `http://localhost:5000/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}`;
+      const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -43,7 +43,7 @@ const SingTool = () => {
         .then((data) => {
           console.log(data);
         });
-      const anotherUrl = `http://localhost:5000/tools/?id=${_id.id}&quantity=${quantity}&available=${tool.quantity}`;
+      const anotherUrl = `https://toolex-factory.herokuapp.com/tools/?id=${_id.id}&quantity=${quantity}&available=${tool.quantity}`;
       console.log(anotherUrl);
       fetch(anotherUrl, {
         method: "PUT",
