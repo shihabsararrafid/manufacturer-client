@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../../firebase.init";
 const Rating = require("react-rating");
 const MyReview = () => {
+  const [user, loading, error] = useAuthState(auth);
   const [num, setNum] = useState(5);
   const {
     register,
@@ -12,7 +15,20 @@ const MyReview = () => {
     setNum(number);
     console.log(number);
   };
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    const url = `http://localhost:5000/review?email=${user.email}&name=${user.displayName}&img=${user.photoURL}&start=${num}`;
+    console.log(url);
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <div className="my-20">
       <h1 className="text-4xl font-mono font-semibold text-primary">
