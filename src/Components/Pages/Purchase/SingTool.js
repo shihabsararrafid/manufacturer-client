@@ -58,6 +58,13 @@ const SingTool = () => {
   };
   return (
     <div>
+      <h1 className="text-2xl font-mono font-bold">
+        HeY , Welcome{" "}
+        <span className="text-secondary">
+          {user?.displayName} <br />
+          {user?.email}
+        </span>
+      </h1>
       <div className="card w-full lg:w-[60%] mx-auto  bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img

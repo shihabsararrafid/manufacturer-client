@@ -20,11 +20,11 @@ const SingReview = (props) => {
           <h2 class="card-title text-left  uppercase">{name}</h2>
           <p>{review.slice(0, 200)}</p>
           <div class="card-actions justify-center">
-            <div>{rat.length}</div>
             <div class="rating rating-lg">
               <input type="radio" name="rating-9" class="rating-hidden" />
               <input
                 type="radio"
+                readOnly
                 name="rating-9"
                 class={`mask mask-star-2 ${
                   start >= 1 ? "bg-orange-400" : "bg-orange-400"
@@ -33,6 +33,7 @@ const SingReview = (props) => {
               <input
                 type="radio"
                 name="rating-9"
+                readOnly
                 class={`mask mask-star-2 ${
                   start >= 2 ? "bg-orange-400" : "bg-gray-200"
                 }`}
@@ -40,6 +41,7 @@ const SingReview = (props) => {
               <input
                 type="radio"
                 name="rating-9"
+                readOnly
                 class={`mask mask-star-2 ${
                   start >= 3 ? "bg-orange-400" : "bg-gray-200"
                 }`}
@@ -47,6 +49,7 @@ const SingReview = (props) => {
               <input
                 type="radio"
                 name="rating-9"
+                readOnly
                 class={`mask mask-star-2 ${
                   start >= 4 ? "bg-orange-400" : "bg-gray-200"
                 }`}
@@ -54,6 +57,7 @@ const SingReview = (props) => {
               <input
                 type="radio"
                 name="rating-9"
+                readOnly
                 class={`mask mask-star-2 ${
                   start >= 5 ? "bg-orange-400" : "bg-gray-200"
                 }`}

@@ -15,6 +15,7 @@ import MyOrders from "./Components/Pages/Dashboard/MyOrders";
 import MyProfile from "./Components/Pages/Dashboard/MyProfile";
 import MyReview from "./Components/Pages/Dashboard/MyReview";
 import Updateprofile from "./Components/Pages/Dashboard/Updateprofile";
+import RequireAuth from "./Components/Pages/Authentication/RequireAuth";
 
 function App() {
   return (
@@ -24,11 +25,32 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/purchase" element={<Purchase></Purchase>}></Route>
-        <Route path="/purchase/:id" element={<SingTool></SingTool>}></Route>
+        <Route
+          path="/purchase"
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/purchase/:id"
+          element={
+            <RequireAuth>
+              <SingTool></SingTool>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
         <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
         <Route path="myreview" element={<MyReview></MyReview>}></Route>
