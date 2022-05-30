@@ -58,6 +58,13 @@ const Navbar = () => {
             <Link className="text-xl font-bold uppercase " to="/purchase">
               Purchase
             </Link>
+            {user ? (
+              <Link className="text-xl font-bold uppercase " to="/dashboard">
+                Dashboard
+              </Link>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
         <a className=" uppercase font-bold text-2xl  lg:ml-10 text-xl">
@@ -98,6 +105,13 @@ const Navbar = () => {
               <Link className="text-xl font-bold uppercase " to="/purchase">
                 Purchase
               </Link>
+              {user ? (
+                <Link className="text-xl font-bold uppercase " to="/dashboard">
+                  Dashboard
+                </Link>
+              ) : (
+                ""
+              )}
             </li>
           </ul>
         </div>
