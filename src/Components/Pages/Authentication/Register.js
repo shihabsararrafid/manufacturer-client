@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import wrong from "./../../../Images/wrong.png";
 import right from "./../../../Images/right.jpg";
 import {
+  useAuthState,
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
@@ -15,14 +16,16 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useSendEmailVerification } from "react-firebase-hooks/auth";
 import { async } from "@firebase/util";
 import auth from "../../../firebase.init";
+import UseUsers from "../../Hooks/UseUsers";
 
 const Register = () => {
-  const [signInWithGoogle, user, loading, error2] = useSignInWithGoogle(auth);
+  const [user, loading1, error3] = useAuthState(auth);
+  const [signInWithGoogle, guser, loading, error2] = useSignInWithGoogle(auth);
   const googleSignIn = async (e) => {
     e.preventDefault();
     console.log(" hello");
     await signInWithGoogle();
-    console.log(user);
+    console.log(guser);
   };
 
   // const [
@@ -43,9 +46,11 @@ const Register = () => {
       .then(async (res) => {
         if (res) {
           sendEmailVerification();
-          // console.log(res.user);
+
+          UseUsers(res.user);
           await updateProfile({ displayName: name });
           // console.log(res.user);
+          //console.log(user);
           setTimeout(() => {
             const msg = document.getElementById("success");
             msg.style.display = "flex";

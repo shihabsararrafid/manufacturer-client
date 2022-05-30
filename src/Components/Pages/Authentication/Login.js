@@ -2,7 +2,10 @@ import google from "./../../../Images/google.png";
 import github from "./../../../Images/github.png";
 import facebook from "./../../../Images/facebook.png";
 import React, { useState } from "react";
-import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSendPasswordResetEmail,
+} from "react-firebase-hooks/auth";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -14,8 +17,10 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 import auth from "../../../firebase.init";
 import Loading from "../Shared/Loading";
+import UseUsers from "../../Hooks/UseUsers";
 
 const Login = () => {
+  const [user2, loading1, error3] = useAuthState(auth);
   const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const [wrongmessage, setWrongmessage] = useState("");
   const [email, setEmail] = useState("");
@@ -27,8 +32,13 @@ const Login = () => {
   const googleSignIn = async (e) => {
     e.preventDefault();
     await signInWithGoogle();
-    console.log(user);
+    if (loading) {
+      return <Loading></Loading>;
+    }
+
     if (user) {
+      console.log(user);
+
       setTimeout(() => {
         const msg = document.getElementById("success");
         msg.style.display = "flex";
@@ -38,6 +48,7 @@ const Login = () => {
         const msg = document.getElementById("success");
         msg.style.display = "none";
       }, 5000);
+      UseUsers(user);
       navigate(from, { replace: true });
     }
     if (loading) {
