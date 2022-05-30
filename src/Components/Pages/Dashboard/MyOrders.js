@@ -55,20 +55,35 @@ const MyOrders = () => {
       .then((data) => setProducts(data));
   }, []);
   //console.log(orderId);
-  console.log(orders);
+  //console.log(orders);
 
   for (let i = 0; i < orders?.length; i++) {
     const newer = products.find((p) => p._id === orders[i]?._id);
     ordersnew.push(newer);
     //console.log(order);
   }
-
+  const handleDelectebtn = (id) => {
+    const confirm = window.confirm("Are you sure?");
+    if (confirm) {
+      const url = `http://localhost:5000/myorders?id=${id}&email=${user.email}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const newo = orders.filter((o) => o._id !== id);
+          setOrders(newo);
+        });
+    }
+    console.log(id);
+  };
   return (
     <div>
       <h1 className="text-3xl">
         Hello{" "}
         <span className="font-mono font-bold text-secondary">
-          {user.displayName}
+          {user?.displayName}
         </span>
       </h1>
 
@@ -80,7 +95,7 @@ const MyOrders = () => {
           Sorry , You Havenot added anything to your cart
         </p>
       )}
-      <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      <div className="grid gap-10 mx-4 my-8 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         {orders.map((o) => (
           <div>
             <div class="card  card-side bg-base-100 shadow-xl ">
@@ -105,7 +120,10 @@ const MyOrders = () => {
                 </div>
                 <div class="card-actions justify-center">
                   <button class="btn btn-secondary">Pay Now</button>
-                  <button className="bg-red-600 text-white btn">
+                  <button
+                    onClick={() => handleDelectebtn(`${o._id}`)}
+                    className="bg-red-600 text-white btn"
+                  >
                     Delete Item
                   </button>
                   <div>
