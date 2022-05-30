@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import userpic from "./../../../Images/user.png";
 import auth from "../../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const Updateprofile = () => {
   const [updateProfile, updating, error1] = useUpdateProfile(auth);
   const [user, loading, error] = useAuthState(auth);
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+  if (updating) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <h1 className="text-4xl font-mono font-semibold text-primary">
