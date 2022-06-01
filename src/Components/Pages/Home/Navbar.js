@@ -41,6 +41,9 @@ const Navbar = () => {
             <Link className="text-xl font-bold uppercase " to="/home">
               Home
             </Link>
+            <Link className="text-xl font-bold uppercase " to="/portfolio">
+              Portfolio
+            </Link>
             {/* <li tabindex="0">
               <a className="justify-between">
                 Parent
@@ -82,7 +85,7 @@ const Navbar = () => {
           Tool<span className="text-white">Ex</span>
         </a>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end lg:navbar">
         <div className=" hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
@@ -115,6 +118,9 @@ const Navbar = () => {
             <li>
               <Link className="text-xl font-bold uppercase " to="/purchase">
                 Purchase
+              </Link>
+              <Link className="text-xl font-bold uppercase " to="/portfolio">
+                Portfolio
               </Link>
               <Link className="text-xl font-bold uppercase " to="/blogs">
                 Blogs

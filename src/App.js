@@ -20,6 +20,7 @@ import Users from "./Components/Pages/Dashboard/Users";
 import Blog from "./Components/Pages/Blogs/Blog";
 import Allproduct from "./Components/Pages/Dashboard/Allproduct";
 import AddItem from "./Components/Pages/Dashboard/AddItem";
+import Portfolio from "./Components/Pages/My PortFolio/Portfolio";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           }
         ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route
           path="/dashboard"
