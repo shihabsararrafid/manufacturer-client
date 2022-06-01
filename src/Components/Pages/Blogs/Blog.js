@@ -38,6 +38,51 @@ const Blog = () => {
           </p>
         </div>
       </div>
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Why Not we set state directly in react?</h2>
+          <p>
+            In react we generally set a state using <span>Usestate()</span> with
+            a function to cahnge the state . This is because if we do it
+            directly it will change the state immediately . Rather it will
+            create a pending state transition . That's how we will lose control
+            over all components.As react uses unidirectional data flows so if we
+            set state directly it may crash our app.
+          </p>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">
+            How will I improve the performance of a React Application?
+          </h2>
+          <p>1.Keeping the component state in local if necessary</p>
+          <p>
+            {" "}
+            2.Memorizing react components to prevent unnecessary re-renders
+          </p>
+          <p>3.Code splitting in react using dynamic import()</p>
+          <p>4.Listing virtualization in React applications</p>
+          <p>5.Using Lazy loading images in React</p>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">What is unit test?</h2>
+          <p>
+            Unit test is process to test software in which every part of
+            software or website is tested .It is done mainly in the development
+            process by the developer.It can be a module , function etc.A smaller
+            unit test is better.
+          </p>
+          <h2 class="card-title">Why should we write unit test?</h2>
+          <p>
+            It is used to validate whether every part of softawre is working
+            good or not.In some modern framework like jUnit unit test can be
+            found.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const AddItem = () => {
     reset,
   } = useForm();
   const onSubmit = (data, e) => {
-    const url = "http://localhost:5000/tools";
+    const url = "https://toolex-factory.herokuapp.com/tools";
     fetch(url, {
       method: "POST",
       headers: {
