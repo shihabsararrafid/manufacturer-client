@@ -18,6 +18,8 @@ import Updateprofile from "./Components/Pages/Dashboard/Updateprofile";
 import RequireAuth from "./Components/Pages/Authentication/RequireAuth";
 import Users from "./Components/Pages/Dashboard/Users";
 import Blog from "./Components/Pages/Blogs/Blog";
+import Allproduct from "./Components/Pages/Dashboard/Allproduct";
+import AddItem from "./Components/Pages/Dashboard/AddItem";
 
 function App() {
   return (
@@ -56,8 +58,13 @@ function App() {
         <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
         <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
         <Route path="myreview" element={<MyReview></MyReview>}></Route>
+        <Route path="addproduct" element={<AddItem></AddItem>}></Route>
         <Route path="users" element={<Users></Users>}></Route>
         <Route path="blogs" element={<Blog></Blog>}></Route>
+        <Route
+          path="manageallproducts"
+          element={<Allproduct></Allproduct>}
+        ></Route>
 
         <Route
           path="myprofile/updateprofile"

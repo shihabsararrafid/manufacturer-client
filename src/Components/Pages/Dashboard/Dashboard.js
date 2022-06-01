@@ -20,9 +20,11 @@ const Dashboard = () => {
           <label for="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 h-[80vh] overflow-y-auto w-[60%] md:w-[40%] lg:w-[25%] bg-primary  text-secondary">
             <li>{!admin && <Link to="/myorders">My Orders</Link>}</li>
-
             <li>
               <Link to="/myprofile">My Profile</Link>
+            </li>
+            <li>
+              <Link to="/manageallproducts">Manage All Products</Link>
             </li>
             <li>{admin && <Link to="/addproduct">Add a Product</Link>}</li>
             <li>{!admin && <Link to="/myreview">My Review</Link>}</li>

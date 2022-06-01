@@ -2,10 +2,11 @@ import React from "react";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useAdmin from "../../Hooks/useAdmin";
 import userpic from "./../../../Images/user.png";
 const MyProfile = () => {
   const [user, loading, error] = useAuthState(auth);
-
+  const [admin, adminloading] = useAdmin(user);
   console.log(user);
   return (
     <div>
@@ -38,6 +39,11 @@ const MyProfile = () => {
             <p className="font-serif">{user?.displayName}</p>
             <p className="text-primary font-mono font-bold">Email:</p>
             <p className="font-serif">{user?.email}</p>
+            {admin && (
+              <p className="font-mono text-lg font-bold text-secondary">
+                Admin
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useParams } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useAvailable from "../../Hooks/useAvailable";
 import Description from "../Home/Description";
 
 const SingTool = () => {
@@ -10,6 +11,7 @@ const SingTool = () => {
   console.log(_id.id);
   let des;
   const [tool, setTool] = useState({});
+
   useEffect(() => {
     const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}`;
     console.log(url);
@@ -17,21 +19,24 @@ const SingTool = () => {
       .then((res) => res.json())
       .then((data) => {
         setTool(data);
-
+        setAvailable(data.quantity);
         des = tool?.des?.split(",");
         console.log(des);
       });
   }, [_id]);
+  const [available, setAvailable] = useAvailable(`${tool?.quantity}`);
   const handleSubmitBtn = (e) => {
     e.preventDefault();
     const quantity = parseInt(e.target.quantity.value);
     const minQuantity = parseInt(tool.minOrder);
     const newQuan = parseInt(tool.quantity) - quantity;
+
     tool.quantity = newQuan;
     if (quantity < minQuantity) {
       alert("Quantity cannot be less than min quantity");
     } else {
-      const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}`;
+      setAvailable(newQuan);
+      const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}&available=${newQuan}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -43,18 +48,22 @@ const SingTool = () => {
         .then((data) => {
           console.log(data);
         });
-      const anotherUrl = `https://toolex-factory.herokuapp.com/tools/?id=${_id.id}&quantity=${quantity}&available=${tool.quantity}`;
-      console.log(anotherUrl);
-      fetch(anotherUrl, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
+
+      console.log(quantity);
     }
-    console.log(quantity);
+  };
+  const updateQuantity = () => {
+    console.log("updating");
+    const anotherUrl = `https://toolex-factory.herokuapp.com/tools/?id=${_id.id}&available=${available}`;
+    console.log(anotherUrl);
+    fetch(anotherUrl, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div>
@@ -84,7 +93,7 @@ const SingTool = () => {
             Minimum Order:{tool.minOrder}
           </span>
           <span className="mb-0 font-bold text-secondary text-left">
-            Available Quantity:{tool.quantity}
+            Available Quantity:{available}
           </span>
           <span className="mb-0  text-left font-bold text-primary">
             Price:${tool.price}
@@ -101,7 +110,12 @@ const SingTool = () => {
                 placeholder="Enter Quantity"
                 class="input input-bordered"
               />
-              <button className="bg-secondary text-white btn">BUY</button>
+              <button
+                onClick={() => updateQuantity}
+                className="bg-secondary text-white btn"
+              >
+                BUY
+              </button>
             </label>
           </form>
         </div>
