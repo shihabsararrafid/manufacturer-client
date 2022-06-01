@@ -30,7 +30,7 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   const [password, setPassword] = useState("");
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  if (loading1) {
+  if (loading1 || loading) {
     return <Loading></Loading>;
   }
   const googleSignIn = async (e) => {

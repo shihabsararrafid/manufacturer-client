@@ -6,9 +6,13 @@ import auth from "../../../firebase.init";
 import useAdmin from "../../Hooks/useAdmin";
 
 import UseUsers from "../../Hooks/UseUsers";
+import Loading from "../Shared/Loading";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div className="navbar h-[100px] bg-primary text-secondary">

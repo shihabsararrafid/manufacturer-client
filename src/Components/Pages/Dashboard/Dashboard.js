@@ -12,9 +12,6 @@ const Dashboard = () => {
     return <Loading></Loading>;
   }
 
-  if (adminloading) {
-    return <Loading></Loading>;
-  }
   console.log("current user", user.email, admin);
   return (
     <div>
