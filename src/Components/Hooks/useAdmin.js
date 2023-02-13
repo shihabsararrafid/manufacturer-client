@@ -5,7 +5,7 @@ const useAdmin = (user) => {
   const [adminloading, setAdminLoading] = useState(true);
   useEffect(() => {
     fetch(
-      `https://toolex-factory.herokuapp.com/users/addadmin?email=${user?.email}`
+      `https://manufacturer-server-wxrs.vercel.app/users/addadmin?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {

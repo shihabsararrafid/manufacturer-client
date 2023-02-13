@@ -16,7 +16,7 @@ const Tool = ({ tool, len, btnText }) => {
     console.log(id);
     const confirm = window.confirm("Are Sure To delete ");
     if (confirm) {
-      const url = `https://toolex-factory.herokuapp.com/tools?id=${id}`;
+      const url = `https://manufacturer-server-wxrs.vercel.app/tools?id=${id}`;
       console.log(url);
       fetch(url, {
         method: "DELETE",

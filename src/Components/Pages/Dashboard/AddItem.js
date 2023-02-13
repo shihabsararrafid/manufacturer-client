@@ -11,7 +11,7 @@ const AddItem = () => {
     reset,
   } = useForm();
   const onSubmit = (data, e) => {
-    const url = "https://toolex-factory.herokuapp.com/tools";
+    const url = "https://manufacturer-server-wxrs.vercel.app/tools";
     fetch(url, {
       method: "POST",
       headers: {

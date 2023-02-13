@@ -4,7 +4,7 @@ import Tool from "../Home/Tool";
 const Purchase = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("https://toolex-factory.herokuapp.com/tools")
+    fetch("https://manufacturer-server-wxrs.vercel.app/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);

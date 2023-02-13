@@ -14,7 +14,7 @@ const MyOrders = () => {
   let neworders = [];
   const [ordersnew, setOrdersnew] = useState([]);
   useEffect(() => {
-    const url = `https://toolex-factory.herokuapp.com/myorders?email=${user?.email}`;
+    const url = `https://manufacturer-server-wxrs.vercel.app/myorders?email=${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -50,7 +50,7 @@ const MyOrders = () => {
       });
   }, [user?.email]);
   useEffect(() => {
-    fetch("https://toolex-factory.herokuapp.com/tools")
+    fetch("https://manufacturer-server-wxrs.vercel.app/tools")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -65,7 +65,7 @@ const MyOrders = () => {
   const handleDelectebtn = (id) => {
     const confirm = window.confirm("Are you sure?");
     if (confirm) {
-      const url = `https://toolex-factory.herokuapp.com/myorders?id=${id}&email=${user.email}`;
+      const url = `https://manufacturer-server-wxrs.vercel.app/myorders?id=${id}&email=${user.email}`;
       fetch(url, {
         method: "DELETE",
       })

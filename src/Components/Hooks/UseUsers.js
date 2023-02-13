@@ -1,5 +1,5 @@
 const UseUsers = (user) => {
-  const url = `https://toolex-factory.herokuapp.com/users?email=${user.email}`;
+  const url = `https://manufacturer-server-wxrs.vercel.app/users?email=${user.email}`;
   fetch(url, {
     method: "PUT",
     headers: {

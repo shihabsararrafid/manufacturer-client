@@ -13,7 +13,7 @@ const SingTool = () => {
   const [tool, setTool] = useState({});
 
   useEffect(() => {
-    const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}`;
+    const url = `https://manufacturer-server-wxrs.vercel.app/purchase/${_id.id}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
@@ -36,7 +36,7 @@ const SingTool = () => {
       alert("Quantity cannot be less than min quantity");
     } else {
       setAvailable(newQuan);
-      const url = `https://toolex-factory.herokuapp.com/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}&available=${newQuan}`;
+      const url = `https://manufacturer-server-wxrs.vercel.app/purchase/${_id.id}?email=${user?.email}&quantity=${quantity}&price=${tool.price}&img=${tool.img}&name=${tool.name}&available=${newQuan}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -54,7 +54,7 @@ const SingTool = () => {
   };
   const updateQuantity = () => {
     console.log("updating");
-    const anotherUrl = `https://toolex-factory.herokuapp.com/tools/?id=${_id.id}&available=${available}`;
+    const anotherUrl = `https://manufacturer-server-wxrs.vercel.app/tools/?id=${_id.id}&available=${available}`;
     console.log(anotherUrl);
     fetch(anotherUrl, {
       method: "PUT",

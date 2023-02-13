@@ -6,7 +6,7 @@ import Loading from "../Shared/Loading";
 const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("https://toolex-factory.herokuapp.com/users")
+    fetch("https://manufacturer-server-wxrs.vercel.app/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
@@ -17,7 +17,7 @@ const Users = () => {
 
   const handleAdmin = (email) => {
     fetch(
-      `https://toolex-factory.herokuapp.com/users/addadmin?email=${email}&requster=${user.email}`,
+      `https://manufacturer-server-wxrs.vercel.app/users/addadmin?email=${email}&requster=${user.email}`,
       {
         method: "PUT",
         headers: {

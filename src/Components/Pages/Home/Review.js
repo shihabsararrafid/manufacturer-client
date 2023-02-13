@@ -5,7 +5,7 @@ import SingReview from "./SingReview";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://toolex-factory.herokuapp.com/review")
+    fetch("https://manufacturer-server-wxrs.vercel.app/review")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
